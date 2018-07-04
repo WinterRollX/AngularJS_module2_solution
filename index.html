@@ -7,12 +7,25 @@
 	
 </head>
 <body ng-app = "ShoppingListCheckOff">
-<div ng-controller = "ToBuyController as toBuyList">List 1
-	<input type="text" name="ItemName" ng-model = "toBuyList.itemName">
 
+<div ng-controller = "ToBuyController as toBuyList">Things to buy:<br>
+	<ol>
+		<li ng-repeat = "item in toBuyList.itemList">
+			{{item.itemQuantity}} of {{item.itemName}}
+			<button ng-click="toBuyList.addToBrought($index)">Bought!</button>
+		</li>
+	</ol>
 </div>
 
-<div ng-controller = "AlreadyBoughtController as broughtList" >List 2</div>
+<div ng-controller = "AlreadyBoughtController as broughtList" >Things already brought<br>
+<ol>
+	<li ng-repeat = "item in broughtList.itemList">
+		{{item.itemQuantity}} of {{item.itemName}}
+	</li>
+
+</ol>
+
+</div>
 
 
 </body>
