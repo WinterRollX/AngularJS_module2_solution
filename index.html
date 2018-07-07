@@ -18,7 +18,7 @@
 	<div ng-if="toBuyList.itemList.length == 0" >Every thing is brought! Good job!</div><br>
 </div>
 
-<div ng-controller = "AlreadyBoughtController as broughtList" >Things already brought<br>
+<div ng-controller = "AlreadyBoughtController as broughtList" >Things already brought:<br>
 <ol>
 	<li ng-repeat = "item in broughtList.itemList">
 		{{item.itemQuantity}} of {{item.itemName}}
