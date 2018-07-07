@@ -14,7 +14,8 @@
 			ShoppingListCheckOffService.deleteFromToBuy(itemIndex);
 		}
 		
-	}
+	} 
+
 
 
 	AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
@@ -53,12 +54,15 @@
 			toBuyItems.splice(itemIndex,1);
 		}
 
-		// push items into toBuy array
+		// push a set of items into toBuy array
 		for(var i=0;i<7;i++){
-		 	var tempItemName = "IamItem" + i;
-		 	service.addToToBuy(tempItemName,i);
+		 	var tempItemName = "Cookie type " + String.fromCharCode(i+65);
+		 	var tempItemQuantity = (i+1).toString() + " bags";
+		 	service.addToToBuy(tempItemName,tempItemQuantity);
 		 }
-		 console.log(toBuyItems);
+
+		// debug only 
+		// console.log(toBuyItems);
 
 	}
 

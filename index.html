@@ -11,10 +11,11 @@
 <div ng-controller = "ToBuyController as toBuyList">Things to buy:<br>
 	<ol>
 		<li ng-repeat = "item in toBuyList.itemList">
-			{{item.itemQuantity}} of {{item.itemName}}
+			Buy {{item.itemQuantity}} of {{item.itemName}}
 			<button ng-click="toBuyList.addToBrought($index)">Bought!</button>
 		</li>
 	</ol>
+	<div ng-if="toBuyList.itemList.length == 0" >Every thing is brought! Good job!</div><br>
 </div>
 
 <div ng-controller = "AlreadyBoughtController as broughtList" >Things already brought<br>
